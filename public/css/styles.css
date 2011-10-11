@@ -1,0 +1,87 @@
+#name{
+	font: 30px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+	float: left;
+	font-size: 30px;
+	margin-right: 35px;
+}
+
+nav {
+padding-top: 15px;
+padding-bottom: 40px;
+}
+
+nav ul li{
+	display: inline;
+	padding-right: 15px;
+	font-size: 15px;
+	vertical-align: bottom;
+}
+
+nav ul li a{
+	text-decoration: none;
+}
+
+.sidebar{
+	float: right;
+	text-align: right;
+	margin-right: 50px;
+
+}
+
+.sidebar ul li{
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+#mypic {
+	border: 4px solid #afafaf;
+	-moz-box-shadow: 5px 2px 9px #868585;
+	-webkit-box-shadow: 5px 2px 9px #868585;
+	box-shadow: 5px 2px 9px #868585;
+}
+
+#footer {
+	font: 12px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+	position: fixed;
+	bottom: 0;
+	width:100%;
+	height:20px;
+	padding-bottom: 10px;
+}
+
+#portfoliolist li{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.portfolioThumbs ul li img{
+	margin-bottom: 30px;
+	margin-right: 40px;
+	float: left;
+	-moz-box-shadow: 4px 3px 5px #9c9999;
+	-webkit-box-shadow: 4px 3px 5px #9c9999;
+	box-shadow: 4px 3px 5px #9c9999;
+}
+
+.portfolioThumbs img{
+	padding: 0;
+}
+
+.contactbuttons ul{
+	list-style: none;
+	float: left;
+	list-style-type: none;
+	display: inline;
+	margin-top: 30px;
+	padding: 0;
+
+}
+
+.contactbuttons li{
+	list-style: none;
+	float: left;
+	list-style-type: none;
+	display: inline;
+	margin-right: 15px;
+	
+}
