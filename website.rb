@@ -1,27 +1,33 @@
 require 'rubygems'
 require 'sinatra'
-require 'haml'
+require './articles'
 
 get '/' do
-  haml :home
+  @articles = Articles.all
+ erb :home
 end
 
 get '/about' do
-  haml :about
+  erb :about
 end
 
-get '/mywork' do
-  haml :mywork
+get '/work' do
+  erb :mywork
 end
 
 get '/contact' do
-  haml :contact
+  erb :contact
 end
 
 get '/print' do
-  haml :print
+  erb :print
 end
 
 get '/photography' do
-  haml :photography
+  erb :photography
+end
+
+get '/articles/:id' do
+  @article = Articles.get params[:id]
+  erb :article
 end
