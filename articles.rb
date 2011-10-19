@@ -3,7 +3,7 @@ require 'data_mapper'
 require './website'
 
 
-DataMapper.setup( :default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/mydatabase.db" )
+DataMapper.setup( :default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/test1.db")
 
 class Articles
   include DataMapper::Resource
