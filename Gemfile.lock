@@ -75,7 +75,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  datamapper
-  dm-sqlite-adapter
+  datamapper (= 1.2.0)
+  dm-sqlite-adapter (= 1.2.0)
+  do_sqlite3 (= 0.10.6)
   sinatra (= 1.1.0)
   thin (= 1.2.7)
