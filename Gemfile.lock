@@ -4,8 +4,6 @@ GEM
     addressable (2.2.6)
     bcrypt-ruby (3.0.1)
     daemons (1.1.4)
-    data_objects (0.10.6)
-      addressable (~> 2.1)
     datamapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -22,9 +20,6 @@ GEM
       dm-core (~> 1.2.0)
     dm-core (1.2.0)
       addressable (~> 2.2.6)
-    dm-do-adapter (1.2.0)
-      data_objects (~> 0.10.6)
-      dm-core (~> 1.2.0)
     dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
     dm-serializer (1.2.0)
@@ -33,9 +28,6 @@ GEM
       json (~> 1.5.4)
       json_pure (~> 1.5.4)
       multi_json (~> 1.0.3)
-    dm-sqlite-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_sqlite3 (~> 0.10.6)
     dm-timestamps (1.2.0)
       dm-core (~> 1.2.0)
     dm-transactions (1.2.0)
@@ -50,8 +42,6 @@ GEM
       uuidtools (~> 2.1.2)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_sqlite3 (0.10.6)
-      data_objects (= 0.10.6)
     eventmachine (0.12.10)
     fastercsv (1.5.4)
     json (1.5.4)
@@ -76,6 +66,5 @@ PLATFORMS
 
 DEPENDENCIES
   datamapper
-  dm-sqlite-adapter
   sinatra (= 1.1.0)
   thin (= 1.2.7)
