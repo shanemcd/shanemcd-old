@@ -3,7 +3,7 @@ require 'data_mapper'
 require './website'
 
 
-DataMapper.setup( :default, "postgres://localhost/mydb" )
+DataMapper.setup( :default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/mydatabase.db" )
 
 class Articles
   include DataMapper::Resource
