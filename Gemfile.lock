@@ -50,6 +50,8 @@ GEM
       uuidtools (~> 2.1.2)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
+    do_postgres (0.10.6)
+      data_objects (= 0.10.6)
     do_sqlite3 (0.10.6)
       data_objects (= 0.10.6)
     eventmachine (0.12.10)
@@ -77,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   datamapper (= 1.2.0)
   dm-sqlite-adapter (= 1.2.0)
-  do_sqlite3 (= 0.10.6)
+  do_postgres
+  do_sqlite3
   sinatra (= 1.1.0)
   thin (= 1.2.7)
