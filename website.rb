@@ -3,7 +3,7 @@ require 'sinatra'
 require 'data_mapper'
 
 configure :production do 
-  DataMapper::setup(:default, ENV['DATABASE_URL']) 
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/articles.db')
 end 
 configure :development do 
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/article.db") 
