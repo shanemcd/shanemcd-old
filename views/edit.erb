@@ -3,7 +3,7 @@
 	<form action="/article/<%= @article.id %>" method="post" id="edit">
 		<input type="hidden" name="_method" value="put"> 
 		<input type="text" name="title" value="<%= @article.articleName %>"/>
-		<textarea name="content"><%= @article.articleBody %></textarea>
+		<textarea name="content" id="textarea"><%= @article.articleBody %></textarea>
 	<input type="submit">  
 	</form>
 	<a href="/article/<%= @article.id %>/delete">Delete</a>

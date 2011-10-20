@@ -19,7 +19,7 @@ get '/' do
 end
 
 get '/admin' do
-  haml :admin
+  erb :admin
 end
 
 post '/login' do
