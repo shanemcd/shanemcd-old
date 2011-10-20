@@ -1,16 +1,9 @@
 require 'sinatra'
-require 'datamapper'
+require 'data_mapper'
 require './website'
 require 'data_mapper'
 
-configure :production do 
-  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/articles.db')
-end 
-
-# configure :development do 
-#   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/article.db") 
-#   DataMapper.auto_upgrade! 
-# end 
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/my.db")
 
 class Articles
   include DataMapper::Resource

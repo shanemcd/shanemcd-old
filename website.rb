@@ -1,9 +1,10 @@
 require 'rubygems'
 require 'sinatra'
-
+require 'data_mapper'
+require './articles'
 
 get '/' do
-  # @articles = Articles.all
+  @articles = Articles.all
  erb :home
 end
 
@@ -27,7 +28,7 @@ get '/photography' do
   erb :photography
 end
 
-# get '/articles/:id' do
-#   @article = Articles.get params[:id]
-#   erb :article
-# end
+get '/articles/:id' do
+  @article = Articles.get params[:id]
+  erb :article
+end
