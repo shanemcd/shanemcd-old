@@ -1,9 +1,9 @@
 require 'sinatra'
-require 'data_mapper'
+require 'datamapper'
 require './website'
 
 
-DataMapper.setup( :default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/test1.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/my.db")
 
 class Articles
   include DataMapper::Resource
@@ -12,7 +12,8 @@ class Articles
   property :articleBody,  Text
 end
 
-DataMapper.finalize.auto_migrate!
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 a = Articles.new
 a.articleName = "Test"
