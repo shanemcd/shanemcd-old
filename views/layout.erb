@@ -25,6 +25,7 @@
 <body>
 
 <div class="container">
+	<div id="wrap">
 	<div id="name">Shane McDonald</div>
 	<nav>
 		<ul>
@@ -34,12 +35,13 @@
 			<li><a href="/contact">Contact</a></li>
 		</ul>
 	</nav>
-	
-<div class="content"><%= yield %></div>
-<div class="clearfooter"></div>
+
+
+<%= yield %>
+<div id="push"></div>
 <div id="footer"><p>Copyright 2011 Shane McDonald</p></div>
 </div>
-
+</div>
 <script type="text/javascript">
      SyntaxHighlighter.all()
 </script>

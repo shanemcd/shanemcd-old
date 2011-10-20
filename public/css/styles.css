@@ -15,25 +15,24 @@ html, body{
 	min-height: 500px;
 }
 
-.container{
-	min-height: 100%;
-	margin-bottom: -40px;
-	position: relative;
-}
-
-#content{
+.content{
 	min-height: 100%;
 	height: 100%;
 }
 
-.clearfooter {
-   height: 30px;
-   clear: both;
+#wrap{
+	padding-top: 30px;
+}
+
+#push{
+	height: 30px;
+	clear: both;
 }
 
 #footer {
 	font: 12px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
-	position: relative;
+	position: absolute;
+	bottom: 0;
 	height: 30px;
 }
 
