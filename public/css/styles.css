@@ -1,8 +1,34 @@
+html, body{
+	height: 100%;
+}
+
 #name{
 	font: 30px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
 	float: left;
 	font-size: 30px;
 	margin-right: 35px;
+}
+
+.container{
+	min-height: 100%;
+	margin-bottom: -40px;
+	position: relative;
+}
+
+#content{
+	min-height: 100%;
+	height: 100%;
+}
+
+.clearfooter {
+   height: 30px;
+   clear: both;
+}
+
+#footer {
+	font: 12px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+	position: relative;
+	height: 30px;
 }
 
 nav {
@@ -38,15 +64,6 @@ nav ul li a{
 	-moz-box-shadow: 5px 2px 9px #868585;
 	-webkit-box-shadow: 5px 2px 9px #868585;
 	box-shadow: 5px 2px 9px #868585;
-}
-
-#footer {
-	font: 12px 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
-	position: fixed;
-	bottom: 0;
-	width:100%;
-	height:20px;
-	padding-bottom: 10px;
 }
 
 #portfoliolist li{

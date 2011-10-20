@@ -1,0 +1,5 @@
+<% @articles.each do |title| %>
+	<ul>
+		<li><%= title.articleName %>&nbsp<a href="/edit/<%= title.id %>">Edit</a></li>
+	</ul>
+<% end %>
