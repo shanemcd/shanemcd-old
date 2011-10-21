@@ -29,10 +29,13 @@ end
 get '/photography' do
   erb :photography
 end
-
 # End Routes
 
 # Aricle Routes
+get '/articles/:id' do
+  @article = Articles.get params[:id]
+  erb :article
+end
 
 get '/add' do
   protected!
@@ -88,19 +91,12 @@ delete '/:id' do
   a.destroy
   redirect '/'
 end
-
-get '/articles/:id' do
-  @article = Articles.get params[:id]
-  erb :article
-end
-
 # End Articles
 
 # Admin Stuff
-
 set :username,'admin'
 set :token,'maketh1$longandh@rdtoremember'
-set :password,'8Dinosaurs'
+set :password, ENV['ADMIN_PASS']
 
 helpers do
   def admin? ; request.cookies[settings.username] == settings.token ; end
@@ -121,5 +117,4 @@ post '/login' do
 end
 
 get('/logout'){ response.set_cookie(settings.username, false) ; redirect '/' }
-
 # End Admin
