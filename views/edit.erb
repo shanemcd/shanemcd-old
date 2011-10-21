@@ -4,7 +4,7 @@
 		<input type="hidden" name="_method" value="put"> 
 		<input type="text" name="title" value="<%= @article.articleName %>"/>
 		<textarea name="content" id="textarea"><%= @article.articleBody %></textarea>
-	<input type="submit">  
+		<input type="submit">  
 	</form>
 	<a href="/article/<%= @article.id %>/delete">Delete</a>
 </div>

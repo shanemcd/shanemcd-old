@@ -1,16 +1,29 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
 	<title>Shane McDonald</title>
-	<meta />
-	<meta />
+	<meta name="description" content="Personal Site of Shane McDonald">
+	<meta name="author" content="Shane McDonald">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Top_up.. Calls Jquery. Look into this. 
+  ================================================== -->
 	<script type="text/javascript" src="http://gettopup.com/releases/latest/top_up-min.js"></script>
+	
+	<!-- CSS
+  ================================================== -->
 	<link rel="stylesheet" href="/css/base.css" />
 	<link rel="stylesheet" href="/css/skeleton.css" />
 	<link rel="stylesheet" href="/css/layout.css" />
 	<link rel="stylesheet" href="/css/styles.css" />
 	
+	<!-- Syntax Highlighter
+  ================================================== -->	
 	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
 	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeRDark.css" rel="stylesheet" type="text/css" />
 	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
@@ -19,29 +32,47 @@
 	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js" type="text/javascript"></script>
 	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushRuby.js" type="text/javascript"></script>
 	
+	<!-- Mobile Specific Metas
+	  ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Analytics
+  ================================================== -->
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-26459359-1']);
+	  _gaq.push(['_setDomainName', 'shanemcd.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 </head>
 
 <body>
 
 <div class="container">
 	<div id="wrap">
-	<div id="name">Shane McDonald</div>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About Me</a></li>
-			<li><a href="/work">My Work</a></li>
-			<li><a href="/contact">Contact</a></li>
-		</ul>
-	</nav>
-
-
-<%= yield %>
-<div id="push"></div>
-<div id="footer"><p>Copyright 2011 Shane McDonald</p></div>
+		<div id="name">Shane McDonald</div>
+			<nav>
+				<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About Me</a></li>
+				<li><a href="/work">My Work</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+			</nav>
+		<%= yield %>
+		<div id="push"></div>
+		<div id="footer"><p>Copyright 2011 Shane McDonald</p></div>
+	</div>
 </div>
-</div>
+
 <script type="text/javascript">
      SyntaxHighlighter.all()
 </script>
