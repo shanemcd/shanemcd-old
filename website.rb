@@ -4,32 +4,35 @@ require 'data_mapper'
 require 'haml'
 require './models'
 
-set :username,'admin'
-set :token,'maketh1$longandh@rdtoremember'
-set :password,'8Dinosaurs'
-
-helpers do
-  def admin? ; request.cookies[settings.username] == settings.token ; end
-  def protected! ; halt [ 401, 'Get out my house!' ] unless admin? ; end
-end
-
+# Regular Routes
 get '/' do
   @articles = Articles.all
  erb :home
 end
 
-get '/admin' do
-  erb :admin
+get '/about' do
+  erb :about
 end
 
-post '/login' do
-  if params['username']==settings.username&&params['password']==settings.password
-      response.set_cookie(settings.username,settings.token) 
-      redirect '/articlelist'
-    else
-      "Get out my house!"
-    end
+get '/work' do
+  erb :mywork
 end
+
+get '/contact' do
+  erb :contact
+end
+
+get '/print' do
+  erb :print
+end
+
+get '/photography' do
+  erb :photography
+end
+
+# End Routes
+
+# Aricle Routes
 
 get '/add' do
   protected!
@@ -86,29 +89,37 @@ delete '/:id' do
   redirect '/'
 end
 
-get('/logout'){ response.set_cookie(settings.username, false) ; redirect '/' }
-
-get '/about' do
-  erb :about
-end
-
-get '/work' do
-  erb :mywork
-end
-
-get '/contact' do
-  erb :contact
-end
-
-get '/print' do
-  erb :print
-end
-
-get '/photography' do
-  erb :photography
-end
-
 get '/articles/:id' do
   @article = Articles.get params[:id]
   erb :article
 end
+
+# End Articles
+
+# Admin Stuff
+
+set :username,'admin'
+set :token,'maketh1$longandh@rdtoremember'
+set :password,'8Dinosaurs'
+
+helpers do
+  def admin? ; request.cookies[settings.username] == settings.token ; end
+  def protected! ; halt [ 401, 'Get out my house!' ] unless admin? ; end
+end
+
+get '/admin' do
+  erb :admin
+end
+
+post '/login' do
+    if params['username']==settings.username&&params['password']==settings.password
+      response.set_cookie(settings.username,settings.token) 
+      redirect '/articlelist'
+    else
+      "Get out my house!"
+    end
+end
+
+get('/logout'){ response.set_cookie(settings.username, false) ; redirect '/' }
+
+# End Admin
