@@ -94,27 +94,19 @@ end
 # End Articles
 
 # Admin Stuff
-set :username,'admin'
-set :token,'maketh1$longandh@rdtoremember'
-set :password, ENV['ADMIN_PASS']
-
 helpers do
-  def admin? ; request.cookies[settings.username] == settings.token ; end
-  def protected! ; halt [ 401, 'Get out my house!' ] unless admin? ; end
-end
 
-get '/admin' do
-  erb :admin
-end
-
-post '/login' do
-    if params['username']==settings.username&&params['password']==settings.password
-      response.set_cookie(settings.username,settings.token) 
-      redirect '/articlelist'
-    else
-      "Get out my house!"
+  def protected!
+    unless authorized?
+      response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
+      throw(:halt, [401, "Not authorized\n"])
     end
-end
+  end
 
-get('/logout'){ response.set_cookie(settings.username, false) ; redirect '/' }
+  def authorized?
+    @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+    @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ['admin', ENV['ADMIN_PASS']]
+  end
+
+end
 # End Admin
